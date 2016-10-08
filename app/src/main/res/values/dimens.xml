@@ -1,0 +1,27 @@
+<resources>
+    <dimen name="font_60">60.0sp</dimen>
+    <dimen name="font_55">55.0sp</dimen>
+    <dimen name="font_50">50.0sp</dimen>
+    <dimen name="font_45">45.0sp</dimen>
+    <dimen name="font_40">40.0sp</dimen>
+    <dimen name="font_26">26.0sp</dimen>
+    <dimen name="font_24">24.0sp</dimen>
+    <dimen name="font_22">22.0sp</dimen>
+    <dimen name="font_20">20.0sp</dimen>
+    <dimen name="font_19">19.0sp</dimen>
+    <dimen name="font_14">14.0sp</dimen>
+    <dimen name="font_11">11.0sp</dimen>
+    <dimen name="font_12">12.0sp</dimen>
+    <dimen name="font_13">13.0sp</dimen>
+    <dimen name="font_18">18.0sp</dimen>
+    <dimen name="font_17">17.0sp</dimen>
+    <dimen name="font_16">16.0sp</dimen>
+    <dimen name="font_10">10.0sp</dimen>
+
+    <dimen name="common_circle_width">3dp</dimen>
+    <dimen name="progress_circle_radius">34dp</dimen>
+    <dimen name="alert_width">290dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+</resources>

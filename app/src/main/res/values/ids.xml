@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="iv_back" type="id">false</item>
+    <item name="tv_title" type="id">false</item>
+    <item name="iv_header_edit" type="id">false</item>
+    <item name="ll_01" type="id">false</item>
+    <item name="gv_data" type="id">false</item>
+    <item name="tv_01" type="id">false</item>
+    <item name="iv_01" type="id">false</item>
+</resources>
