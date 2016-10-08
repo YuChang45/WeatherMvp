@@ -1,4 +1,4 @@
-package android.yuchang.weathermvp;
+package android.yuchang.weathermvp.app;
 
 import android.app.Application;
 
