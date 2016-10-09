@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:background="@color/gray_btn_bg_pressed_color"
+    android:background="@drawable/addmorecity_item_selector"
     android:id="@+id/ll_01"
     android:orientation="horizontal">
 
@@ -17,4 +17,10 @@
         android:textSize="@dimen/font_18"
         android:text="岳阳" />
 
+    <ImageView
+        android:id="@id/iv_01"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:src="@mipmap/list_arrow_right" />
 </LinearLayout>

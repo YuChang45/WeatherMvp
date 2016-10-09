@@ -29,12 +29,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends Activity imp
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initContentView(savedInstanceState);
-        //强制设置为全局竖屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setUpViews();
-        setUpLisener();
-        getDataOnCreate();
         mPresenter = TUtil.getT(this, 0);
         if (mPresenter == null) {
             throw new IllegalArgumentException("Presenter can not be null ");
@@ -44,6 +38,13 @@ public abstract class BaseActivity<T extends BasePresenter> extends Activity imp
         } else {
             throw new IllegalArgumentException("Activity must implemt BaseView ");
         }
+        initContentView(savedInstanceState);
+        //强制设置为全局竖屏
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setUpViews();
+        setUpLisener();
+        getDataOnCreate();
+
     }
 
     @Override

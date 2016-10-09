@@ -55,6 +55,8 @@ public class ChosenCityPresenter extends BasePresenter {
         }
     }
 
+
+
     @Override
     public void onStart() {
         iHotCityBean = new HotCityBeanImpl();

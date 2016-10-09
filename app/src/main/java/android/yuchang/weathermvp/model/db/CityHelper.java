@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.yuchang.weathermvp.R;
 import android.yuchang.weathermvp.commom.utils.StrUtil;
+import android.yuchang.weathermvp.model.entity.AddMoreCityBean;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,18 +24,19 @@ public class CityHelper {
         super();
         this.context = context;
         dbm = new CityDataBase(context);
+        zxs = Arrays.asList(context.getResources().getStringArray(R.array.province_level_city_names));
     }
 
-    public List<String> getData(String inParam) {
+    public List<AddMoreCityBean> getData(String inParam) {
         if (StrUtil.isEmpty(inParam)) {
             return getProvinces();
         } else {
             //判断是否是直辖市
             if (zxs.contains(inParam)) {
-                return getCountryNames(inParam);
+               return getCountryNames(inParam);
             } else {
                 //判断是否是省份
-                if (getProvinces().contains(inParam)) {
+                if (getProvinces().contains(new AddMoreCityBean(inParam,false))) {
                     return getCityNames(inParam);
                 } else {
                     return getCountryNames(inParam);
@@ -43,17 +45,17 @@ public class CityHelper {
         }
     }
 
-    public List<String> getProvinces() {
+    public List<AddMoreCityBean> getProvinces() {
 
         db = dbm.getDatabase();
-        List<String> data = new ArrayList<>();
+        List<AddMoreCityBean> data = new ArrayList<>();
         try {
 
             String sql = "select distinct province_name from city ";
             Cursor cursor = db.rawQuery(sql, null);
             while (cursor.moveToNext()) {
-                data.add(cursor.getString(cursor
-                        .getColumnIndex("province_name")));
+                data.add(new AddMoreCityBean(cursor.getString(cursor
+                        .getColumnIndex("province_name")),true));
             }
 
         } catch (Exception e) {
@@ -73,10 +75,9 @@ public class CityHelper {
      * @param code
      * @return
      */
-    public List<String> getCityNames(String code) {
+    public List<AddMoreCityBean> getCityNames(String code) {
         db = dbm.getDatabase();
-        zxs = Arrays.asList(context.getResources().getStringArray(R.array.province_level_city_names));
-        List<String> data = new ArrayList<>();
+               List<AddMoreCityBean> data = new ArrayList<>();
         try {
             if (zxs.contains(code)) {
                 data = getCountryNames(code);
@@ -86,8 +87,8 @@ public class CityHelper {
                 Cursor cursor = db.rawQuery(sql, null);
 
                 while (cursor.moveToNext()) {
-                    data.add(cursor.getString(cursor
-                            .getColumnIndex("city_name")));
+                    data.add(new AddMoreCityBean(cursor.getString(cursor
+                            .getColumnIndex("city_name")),true));
                 }
             }
 
@@ -106,9 +107,9 @@ public class CityHelper {
      * @param code
      * @return
      */
-    public List<String> getCountryNames(String code) {
+    public List<AddMoreCityBean> getCountryNames(String code) {
         db = dbm.getDatabase();
-        List<String> data = new ArrayList<>();
+        List<AddMoreCityBean> data = new ArrayList<>();
         try {
 
             String sql = "select distinct country_name from city a where city_name ='"
@@ -116,8 +117,8 @@ public class CityHelper {
             Cursor cursor = db.rawQuery(sql, null);
 
             while (cursor.moveToNext()) {
-                data.add(cursor.getString(cursor
-                        .getColumnIndex("country_name")));
+                data.add(new AddMoreCityBean(cursor.getString(cursor
+                        .getColumnIndex("country_name")),true));
             }
 
         } catch (Exception e) {

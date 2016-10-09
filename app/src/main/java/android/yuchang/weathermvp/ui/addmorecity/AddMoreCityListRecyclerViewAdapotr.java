@@ -1,4 +1,4 @@
-package android.yuchang.weathermvp.ui.chosencity;
+package android.yuchang.weathermvp.ui.addmorecity;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.yuchang.weathermvp.R;
+import android.yuchang.weathermvp.model.entity.AddMoreCityBean;
+import android.yuchang.weathermvp.ui.chosencity.HotCityRecyclerViewAdaptor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,19 +20,21 @@ import java.util.List;
  *         created  at  2016/3/8.
  * @description
  */
-public class CityListRecyclerViewAdapotr extends RecyclerView.Adapter<CityListRecyclerViewAdapotr.MyViewHolder> implements View.OnClickListener {
+public class AddMoreCityListRecyclerViewAdapotr extends RecyclerView.Adapter<AddMoreCityListRecyclerViewAdapotr.MyViewHolder> implements View.OnClickListener {
 
-    public List<String> getData() {
+    public List<AddMoreCityBean> getData() {
         return data;
     }
 
-    public void setData(List<String> data) {
+    public void setData(List<AddMoreCityBean> data) {
         this.data = data;
     }
 
-    private List<String> data = new ArrayList<>();
+    private List<AddMoreCityBean> data = new ArrayList<>();
     private Context context;
     private HotCityRecyclerViewAdaptor.RecyclerViewListenr recyclerViewListenr;
+
+    private int layoutId = 0;
 
     @Override
     public void onClick(View v) {
@@ -39,23 +43,24 @@ public class CityListRecyclerViewAdapotr extends RecyclerView.Adapter<CityListRe
         recyclerViewListenr.onViewClick(v, position);
     }
 
-
-    public CityListRecyclerViewAdapotr(Context context, HotCityRecyclerViewAdaptor.RecyclerViewListenr recyclerViewListenr) {
+    public AddMoreCityListRecyclerViewAdapotr(Context context, HotCityRecyclerViewAdaptor.RecyclerViewListenr recyclerViewListenr, int layoutId) {
         this.context = context;
         this.recyclerViewListenr = recyclerViewListenr;
+        this.layoutId = layoutId;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         MyViewHolder holder = new MyViewHolder(LayoutInflater.from(
-                context).inflate(R.layout.item_list_view_city, parent,
+                context).inflate(layoutId, parent,
                 false));
         return holder;
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.tv_name.setText(data.get(position));
+        holder.tv_name.setText(data.get(position).name);
+        holder.ll_bg.setEnabled(data.get(position).enable);
         holder.ll_bg.setOnClickListener(this);
         holder.ll_bg.setTag(position);
     }
