@@ -18,4 +18,13 @@
     <color name="red_btn_bg_color">#DD6B55</color>
     <color name="red_btn_bg_pressed_color">#CD5B55</color>
     <color name="warning_stroke_color">#F8BB86</color>
+    <color name="transparent">#00000000</color>
+    <color name="txt_gray2">#FCFCFB</color>
+    <color name="txt_gray">#D5D5D5</color>
+    <color name="min_temp_zxt">#74ABF9</color>
+    <color name="max_temp_zxt">#F56669</color>
+    <color name="market_manage_toolbar_divider">#ffcad0d4</color>
+    <color name="market_black">#ff000000</color>
+    <color name="market_grey">#ff999999</color>
+    <color name="market_yellow">#ffff8503</color>
 </resources>

@@ -5,11 +5,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.yuchang.weathermvp.commom.Const;
 import android.yuchang.weathermvp.model.IChosenCityBean;
+import android.yuchang.weathermvp.model.db.ChosenCityHelper;
 import android.yuchang.weathermvp.model.impl.ChosenCityBeanImpl;
 import android.yuchang.weathermvp.presenter.base.BasePresenter;
-import android.yuchang.weathermvp.ui.main.MainActivity;
 import android.yuchang.weathermvp.ui.chosencity.ChosenCityActivity;
+import android.yuchang.weathermvp.ui.main.MainActivity;
 import android.yuchang.weathermvp.ui.start.SplashView;
+
+import java.util.List;
 
 /**
  * @author MrChang45
@@ -20,11 +23,20 @@ public class SplashPresenter extends BasePresenter {
 
     private IChosenCityBean iChosenCityBean;
     private SplashView splashView;
+    private List<String> chosenCityNamesList;
+    private ChosenCityHelper chosenCityHelper;
+
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            splashView.TurnToOtherActivityByIntent(mIntent);
+            chosenCityHelper = new ChosenCityHelper(activity);
+            chosenCityNamesList = chosenCityHelper.getRemainsCityName();
+            if (chosenCityNamesList != null && chosenCityNamesList.size() > 0) {
+                //跳转主界面
+            } else {
+                splashView.TurnToOtherActivityByIntent(mIntent);
+            }
         }
     };
 

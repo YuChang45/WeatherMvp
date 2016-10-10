@@ -3,8 +3,136 @@
     <item name="iv_back" type="id">false</item>
     <item name="tv_title" type="id">false</item>
     <item name="iv_header_edit" type="id">false</item>
-    <item name="ll_01" type="id">false</item>
     <item name="gv_data" type="id">false</item>
-    <item name="tv_01" type="id">false</item>
+
     <item name="iv_01" type="id">false</item>
+    <item name="iv_02" type="id">false</item>
+    <item name="iv_03" type="id">false</item>
+    <item name="iv_04" type="id">false</item>
+    <item name="iv_05" type="id">false</item>
+    <item name="iv_06" type="id">false</item>
+    <item name="iv_07" type="id">false</item>
+    <item name="iv_08" type="id">false</item>
+    <item name="iv_09" type="id">false</item>
+    <item name="iv_10" type="id">false</item>
+    <item name="iv_11" type="id">false</item>
+    <item name="iv_12" type="id">false</item>
+    <item name="iv_13" type="id">false</item>
+    <item name="iv_14" type="id">false</item>
+    <item name="iv_15" type="id">false</item>
+    <item name="iv_16" type="id">false</item>
+    <item name="iv_17" type="id">false</item>
+    <item name="iv_18" type="id">false</item>
+    <item name="iv_19" type="id">false</item>
+    <item name="iv_20" type="id">false</item>
+    <item name="iv_21" type="id">false</item>
+    <item name="iv_22" type="id">false</item>
+    <item name="iv_23" type="id">false</item>
+    <item name="iv_24" type="id">false</item>
+    <item name="iv_25" type="id">false</item>
+    <item name="iv_26" type="id">false</item>
+    <item name="iv_27" type="id">false</item>
+    <item name="iv_28" type="id">false</item>
+    <item name="iv_29" type="id">false</item>
+    <item name="iv_30" type="id">false</item>
+    <item name="iv_31" type="id">false</item>
+    <item name="iv_32" type="id">false</item>
+    <item name="iv_33" type="id">false</item>
+    <item name="iv_34" type="id">false</item>
+    <item name="iv_35" type="id">false</item>
+    <item name="iv_36" type="id">false</item>
+    <item name="iv_37" type="id">false</item>
+    <item name="iv_38" type="id">false</item>
+    <item name="iv_39" type="id">false</item>
+    <item name="iv_40" type="id">false</item>
+
+
+    <item name="tv_01" type="id">false</item>
+    <item name="tv_02" type="id">false</item>
+    <item name="tv_03" type="id">false</item>
+    <item name="tv_04" type="id">false</item>
+    <item name="tv_05" type="id">false</item>
+    <item name="tv_06" type="id">false</item>
+    <item name="tv_07" type="id">false</item>
+    <item name="tv_08" type="id">false</item>
+    <item name="tv_09" type="id">false</item>
+    <item name="tv_10" type="id">false</item>
+    <item name="tv_11" type="id">false</item>
+    <item name="tv_12" type="id">false</item>
+    <item name="tv_13" type="id">false</item>
+    <item name="tv_14" type="id">false</item>
+    <item name="tv_15" type="id">false</item>
+    <item name="tv_16" type="id">false</item>
+    <item name="tv_17" type="id">false</item>
+    <item name="tv_18" type="id">false</item>
+    <item name="tv_19" type="id">false</item>
+    <item name="tv_20" type="id">false</item>
+    <item name="tv_21" type="id">false</item>
+    <item name="tv_22" type="id">false</item>
+    <item name="tv_23" type="id">false</item>
+    <item name="tv_24" type="id">false</item>
+    <item name="tv_25" type="id">false</item>
+    <item name="tv_26" type="id">false</item>
+    <item name="tv_27" type="id">false</item>
+    <item name="tv_28" type="id">false</item>
+    <item name="tv_29" type="id">false</item>
+    <item name="tv_30" type="id">false</item>
+    <item name="tv_31" type="id">false</item>
+    <item name="tv_32" type="id">false</item>
+    <item name="tv_33" type="id">false</item>
+    <item name="tv_34" type="id">false</item>
+    <item name="tv_35" type="id">false</item>
+    <item name="tv_36" type="id">false</item>
+    <item name="tv_37" type="id">false</item>
+    <item name="tv_38" type="id">false</item>
+    <item name="tv_39" type="id">false</item>
+    <item name="tv_40" type="id">false</item>
+    <item name="tv_41" type="id">false</item>
+    <item name="tv_42" type="id">false</item>
+    <item name="tv_43" type="id">false</item>
+    <item name="tv_44" type="id">false</item>
+    <item name="tv_45" type="id">false</item>
+    <item name="tv_46" type="id">false</item>
+    <item name="tv_47" type="id">false</item>
+    <item name="tv_48" type="id">false</item>
+    <item name="tv_49" type="id">false</item>
+    <item name="tv_50" type="id">false</item>
+    <item name="tv_51" type="id">false</item>
+    <item name="tv_52" type="id">false</item>
+    <item name="tv_53" type="id">false</item>
+    <item name="tv_54" type="id">false</item>
+    <item name="tv_55" type="id">false</item>
+    <item name="tv_56" type="id">false</item>
+    <item name="tv_57" type="id">false</item>
+    <item name="tv_58" type="id">false</item>
+    <item name="tv_59" type="id">false</item>
+    <item name="tv_60" type="id">false</item>
+
+    <item name="fl_01" type="id">false</item>
+
+
+    <item name="ll_01" type="id">false</item>
+    <item name="ll_02" type="id">false</item>
+    <item name="ll_03" type="id">false</item>
+    <item name="ll_04" type="id">false</item>
+    <item name="ll_05" type="id">false</item>
+    <item name="ll_06" type="id">false</item>
+    <item name="ll_07" type="id">false</item>
+    <item name="ll_08" type="id">false</item>
+    <item name="ll_09" type="id">false</item>
+
+
+    <item name="chart1" type="id">false</item>
+    <item name="chart2" type="id">false</item>
+
+
+    <item name="viewPager" type="id">false</item>
+
+    <item name="lv_01" type="id">false</item>
+
+
+    <item name="lh_01" type="id">false</item>
+
+    <item name="btn_01" type="id">false</item>
+    <item name="btn_02" type="id">false</item>
 </resources>

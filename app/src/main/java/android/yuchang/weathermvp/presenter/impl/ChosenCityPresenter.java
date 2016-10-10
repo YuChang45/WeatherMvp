@@ -1,16 +1,22 @@
 package android.yuchang.weathermvp.presenter.impl;
 
 import android.content.Intent;
+import android.widget.Toast;
 import android.yuchang.weathermvp.R;
 import android.yuchang.weathermvp.model.IHotCityBean;
+import android.yuchang.weathermvp.model.IWeatherBean;
 import android.yuchang.weathermvp.model.db.ChosenCityHelper;
+import android.yuchang.weathermvp.model.entity.WeatherBean;
 import android.yuchang.weathermvp.model.impl.HotCityBeanImpl;
+import android.yuchang.weathermvp.model.impl.WeatherBeanImpl;
 import android.yuchang.weathermvp.presenter.base.BasePresenter;
 import android.yuchang.weathermvp.ui.addmorecity.AddMoreCityActivity;
 import android.yuchang.weathermvp.ui.chosencity.ChosenCityView;
 import android.yuchang.weathermvp.widget.sweetdialog.SweetAlertDialog;
 
 import java.util.List;
+
+import rx.Observer;
 
 /**
  * @author MrChang45
@@ -24,6 +30,7 @@ public class ChosenCityPresenter extends BasePresenter {
     private ChosenCityView chosenCityView;
     private SweetAlertDialog sweetAlertDialog;
     private ChosenCityHelper chosenCityHelper;
+    private IWeatherBean iWeatherBean;
 
     public void ConvertClick(int action) {
         switch (action) {
@@ -55,11 +62,29 @@ public class ChosenCityPresenter extends BasePresenter {
         }
     }
 
+    public void GetWeather(String cityName) {
+        iWeatherBean.GetWeatherInfo(cityName, new Observer<List<WeatherBean>>() {
+            @Override
+            public void onCompleted() {
 
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(List<WeatherBean> weatherBean) {
+                Toast.makeText(activity,weatherBean.get(0).getAqi().getCity().getAqi(),Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     @Override
     public void onStart() {
         iHotCityBean = new HotCityBeanImpl();
+        iWeatherBean = new WeatherBeanImpl();
         data = iHotCityBean.GetHotCity(activity);
         chosenCityView = (ChosenCityView) mView;
         chosenCityView.FillHotCityRecyclerView(data);

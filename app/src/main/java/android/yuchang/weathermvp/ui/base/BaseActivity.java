@@ -1,9 +1,9 @@
 package android.yuchang.weathermvp.ui.base;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Toast;
 import android.yuchang.weathermvp.commom.utils.TUtil;
@@ -16,7 +16,7 @@ import rx.subscriptions.CompositeSubscription;
  *         create at 2015-12-08
  * @description 公共activity基类
  */
-public abstract class BaseActivity<T extends BasePresenter> extends Activity implements View.OnClickListener {
+public abstract class BaseActivity<T extends BasePresenter> extends FragmentActivity implements View.OnClickListener {
 
     protected Intent mIntent;
     public T mPresenter;

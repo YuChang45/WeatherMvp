@@ -58,7 +58,7 @@ public class ChosenCityActivity extends BaseActivity<ChosenCityPresenter> implem
 
     @Override
     public void onViewClick(View v, int position) {
-        showShortToast(v.getTag().toString());
+        mPresenter.GetWeather(v.getTag().toString());
     }
 
     @Override

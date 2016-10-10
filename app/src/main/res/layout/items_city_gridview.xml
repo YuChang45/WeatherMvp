@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@id/ll_01"
+    android:background="@color/market_manage_toolbar_divider"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@id/fl_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/corners_bg"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@id/iv_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@mipmap/notified_city_indicator"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@id/iv_01"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@mipmap/weathericon_graph_default" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@id/tv_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="18°"
+                        android:textColor="@color/market_grey"
+                        android:textSize="@dimen/font_18" />
+
+                    <TextView
+                        android:id="@id/tv_02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_01"
+                        android:text="16°"
+                        android:textColor="@color/market_grey"
+                        android:textSize="@dimen/font_18" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/tv_03"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="多云"
+                android:textColor="@color/market_grey"
+                android:textSize="@dimen/font_18" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@mipmap/weatherlive_more_line" />
+
+            <TextView
+                android:id="@id/tv_04"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="深圳"
+                android:textSize="@dimen/font_20" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@id/iv_02"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/btn_close_selector"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_add"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/add_city_selector"
+        android:visibility="gone" />
+
+</LinearLayout>

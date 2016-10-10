@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/qing_bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@id/ll_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/aqi_grren_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <ImageView
+                        android:id="@id/iv_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/aqi_icon_optimal" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="AQI"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_12" />
+
+                    <TextView
+                        android:id="@id/tv_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_12" />
+
+
+                    <TextView
+                        android:id="@id/tv_02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_12" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@id/tv_03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@id/tv_04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_40" />
+
+            <TextView
+                android:id="@id/tv_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_22" />
+
+            <TextView
+                android:id="@id/tv_06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-°"
+                android:textColor="@color/white"
+                android:textSize="100sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:background="@mipmap/skin_horizontal_divider" />
+
+                <include
+                    layout="@layout/latest_three_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></include>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="趋势"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_18" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/skin_horizontal_divider" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="410dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/tv_19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_16" />
+
+                        <TextView
+                            android:id="@id/tv_20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_06"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+                        <TextView
+                            android:id="@id/tv_31"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_07"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="230dp"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+                        <TextView
+                            android:id="@id/tv_32"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/hot_vertical_divider" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/tv_21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_16" />
+
+                        <TextView
+                            android:id="@id/tv_22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_08"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+                        <TextView
+                            android:id="@id/tv_33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_09"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="230dp"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+
+                        <TextView
+                            android:id="@id/tv_34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/hot_vertical_divider" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/tv_23"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_16" />
+
+                        <TextView
+                            android:id="@id/tv_24"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_10"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+                        <TextView
+                            android:id="@id/tv_35"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_11"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="230dp"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+
+                        <TextView
+                            android:id="@id/tv_36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/hot_vertical_divider" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/tv_25"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_16" />
+
+                        <TextView
+                            android:id="@id/tv_26"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_12"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+                        <TextView
+                            android:id="@id/tv_37"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_13"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="230dp"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+
+                        <TextView
+                            android:id="@id/tv_38"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/hot_vertical_divider" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/tv_27"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_16" />
+
+                        <TextView
+                            android:id="@id/tv_28"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_14"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+                        <TextView
+                            android:id="@id/tv_39"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_15"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="230dp"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+
+                        <TextView
+                            android:id="@id/tv_40"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/hot_vertical_divider" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/tv_29"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_16" />
+
+                        <TextView
+                            android:id="@id/tv_30"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_16"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+                        <TextView
+                            android:id="@id/tv_41"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+
+                        <ImageView
+                            android:id="@id/iv_17"
+                            android:layout_width="@dimen/weather_ico_width"
+                            android:layout_height="@dimen/weather_ico_height"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="230dp"
+                            android:background="@mipmap/weathericon_graph_default" />
+
+
+                        <TextView
+                            android:id="@id/tv_42"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/txt_gray2"
+                            android:textSize="@dimen/font_14" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="120dp"
+                    android:orientation="vertical">
+
+                    <lecho.lib.hellocharts.view.LineChartView
+                        android:id="@id/chart1"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+
+                    <lecho.lib.hellocharts.view.LineChartView
+                        android:id="@id/chart2"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="详细"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_18" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/skin_horizontal_divider" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="日出:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/forecast_icon_weather_sunrise" />
+
+                        <TextView
+                            android:id="@id/tv_43"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="-"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_16" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:gravity="right"
+                        android:text="日落:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@mipmap/forecast_icon_weather_sunset" />
+
+                        <TextView
+                            android:id="@id/tv_44"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="-"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/font_16" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="体感温度:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@id/tv_45"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="相对湿度:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@id/tv_46"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="气压:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@id/tv_47"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="能见度:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@id/tv_48"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="风力:"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                    <TextView
+                        android:id="@id/tv_49"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/font_16" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="生活"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_18" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/skin_horizontal_divider" />
+            </LinearLayout>
+
+            <include layout="@layout/lift_layout"></include>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

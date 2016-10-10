@@ -32,7 +32,8 @@
         </activity>
         <activity android:name=".ui.main.MainActivity" />
         <activity android:name=".ui.chosencity.ChosenCityActivity" />
-        <activity android:name=".ui.addmorecity.AddMoreCityActivity"></activity>
+        <activity android:name=".ui.addmorecity.AddMoreCityActivity" />
+        <activity android:name=".ui.managercity.ManagerCityActivity"></activity>
     </application>
 
 </manifest>
