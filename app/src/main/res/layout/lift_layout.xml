@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
-                android:text="较舒适"
+                android:text="-"
                 android:textColor="@color/txt_gray"
                 android:textSize="@dimen/font_14" />
         </LinearLayout>
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
-                android:text="较舒适"
+                android:text="-"
                 android:textColor="@color/txt_gray"
                 android:textSize="@dimen/font_14" />
         </LinearLayout>
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
-                android:text="较舒适"
+                android:text="-"
                 android:textColor="@color/txt_gray"
                 android:textSize="@dimen/font_14" />
         </LinearLayout>
@@ -142,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
-                android:text="较舒适"
+                android:text="-"
                 android:textColor="@color/txt_gray"
                 android:textSize="@dimen/font_14" />
         </LinearLayout>
@@ -174,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
-                android:text="较舒适"
+                android:text="-"
                 android:textColor="@color/txt_gray"
                 android:textSize="@dimen/font_14" />
         </LinearLayout>
@@ -206,7 +206,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="3dp"
-                android:text="较舒适"
+                android:text="-"
                 android:textColor="@color/txt_gray"
                 android:textSize="@dimen/font_14" />
         </LinearLayout>

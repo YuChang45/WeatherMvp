@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <mrchang.weather.commom.views.YCViewPager
+        <android.yuchang.weathermvp.widget.YCViewPager
             android:id="@id/viewPager"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" />
@@ -47,7 +47,7 @@
 
             </LinearLayout>
 
-            <mrchang.weather.commom.views.YCCircleFlowIndicator
+            <android.yuchang.weathermvp.widget.YCCircleFlowIndicator
                 android:id="@+id/ycCircleFlowIndicator"
                 app:activeColor="#ff657789"
                 app:activeType="fill"

@@ -30,13 +30,16 @@ public class SplashPresenter extends BasePresenter {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            chosenCityHelper = new ChosenCityHelper(activity);
-            chosenCityNamesList = chosenCityHelper.getRemainsCityName();
-            if (chosenCityNamesList != null && chosenCityNamesList.size() > 0) {
-                //跳转主界面
-            } else {
-                splashView.TurnToOtherActivityByIntent(mIntent);
-            }
+            splashView.TurnToOtherActivityByIntent(mIntent);
+
+//            chosenCityHelper = new ChosenCityHelper(activity);
+//            chosenCityNamesList = chosenCityHelper.getRemainsCityName();
+//            if (chosenCityNamesList != null && chosenCityNamesList.size() > 0) {
+//                //跳转主界面
+//
+//            } else {
+//                splashView.TurnToOtherActivityByIntent(mIntent);
+//            }
         }
     };
 

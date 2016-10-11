@@ -1,17 +1,19 @@
 package android.yuchang.weathermvp.presenter.impl;
 
 import android.content.Intent;
-import android.widget.Toast;
 import android.yuchang.weathermvp.R;
 import android.yuchang.weathermvp.model.IHotCityBean;
 import android.yuchang.weathermvp.model.IWeatherBean;
 import android.yuchang.weathermvp.model.db.ChosenCityHelper;
+import android.yuchang.weathermvp.model.entity.ChosenCityBean;
 import android.yuchang.weathermvp.model.entity.WeatherBean;
 import android.yuchang.weathermvp.model.impl.HotCityBeanImpl;
 import android.yuchang.weathermvp.model.impl.WeatherBeanImpl;
 import android.yuchang.weathermvp.presenter.base.BasePresenter;
 import android.yuchang.weathermvp.ui.addmorecity.AddMoreCityActivity;
 import android.yuchang.weathermvp.ui.chosencity.ChosenCityView;
+import android.yuchang.weathermvp.ui.main.MainActivity;
+import android.yuchang.weathermvp.ui.managercity.ManagerCityActivity;
 import android.yuchang.weathermvp.widget.sweetdialog.SweetAlertDialog;
 
 import java.util.List;
@@ -31,6 +33,7 @@ public class ChosenCityPresenter extends BasePresenter {
     private SweetAlertDialog sweetAlertDialog;
     private ChosenCityHelper chosenCityHelper;
     private IWeatherBean iWeatherBean;
+    private ChosenCityBean chosenCityBean;
 
     public void ConvertClick(int action) {
         switch (action) {
@@ -62,7 +65,7 @@ public class ChosenCityPresenter extends BasePresenter {
         }
     }
 
-    public void GetWeather(String cityName) {
+    public void GetWeather(final String cityName) {
         iWeatherBean.GetWeatherInfo(cityName, new Observer<List<WeatherBean>>() {
             @Override
             public void onCompleted() {
@@ -72,11 +75,34 @@ public class ChosenCityPresenter extends BasePresenter {
             @Override
             public void onError(Throwable e) {
 
+                chosenCityBean = new ChosenCityBean();
+                chosenCityBean.setCityName(cityName);
+                chosenCityBean.setMaxTemperature("获取失败");
+                chosenCityBean.setMinTemperature("获取失败");
+                chosenCityBean.setTemperatureCode(100);
+                chosenCityBean.setTemperatureStr("获取失败");
+                chosenCityBean.setSelectedFlag(1);
+                chosenCityHelper.storeWeatherInfo(chosenCityBean);
+                mIntent = new Intent(activity, MainActivity.class);
+                activity.startActivity(mIntent);
+                activity.finish();
+
             }
 
             @Override
             public void onNext(List<WeatherBean> weatherBean) {
-                Toast.makeText(activity,weatherBean.get(0).getAqi().getCity().getAqi(),Toast.LENGTH_SHORT).show();
+                chosenCityBean = new ChosenCityBean();
+                chosenCityBean.setCityName(cityName);
+                chosenCityBean.setMaxTemperature(weatherBean.get(0).getDaily_forecast().get(0).getTmp().getMax());
+                chosenCityBean.setMinTemperature(weatherBean.get(0).getDaily_forecast().get(0).getTmp().getMin());
+                chosenCityBean.setTemperatureCode(Integer.parseInt(weatherBean.get(0).getNow().getCond().getCode()));
+                chosenCityBean.setTemperatureStr(weatherBean.get(0).getNow().getCond().getTxt());
+                chosenCityBean.setSelectedFlag(1);
+                chosenCityHelper.storeWeatherInfo(chosenCityBean);
+
+                mIntent = new Intent(activity, MainActivity.class);
+                activity.startActivity(mIntent);
+                activity.finish();
             }
         });
     }

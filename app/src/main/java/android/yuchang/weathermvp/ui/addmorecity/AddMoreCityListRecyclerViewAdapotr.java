@@ -39,7 +39,7 @@ public class AddMoreCityListRecyclerViewAdapotr extends RecyclerView.Adapter<Add
     @Override
     public void onClick(View v) {
         int position = (int) v.getTag();
-        v.setTag(data.get(position));
+        v.setTag(data.get(position).name);
         recyclerViewListenr.onViewClick(v, position);
     }
 

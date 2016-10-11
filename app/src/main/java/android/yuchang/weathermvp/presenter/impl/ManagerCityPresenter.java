@@ -10,6 +10,7 @@ import android.yuchang.weathermvp.model.db.ChosenCityHelper;
 import android.yuchang.weathermvp.model.entity.ChosenCityBean;
 import android.yuchang.weathermvp.presenter.base.BasePresenter;
 import android.yuchang.weathermvp.ui.addmorecity.AddMoreCityActivity;
+import android.yuchang.weathermvp.ui.main.MainActivity;
 import android.yuchang.weathermvp.ui.managercity.ManagerCityRecyclerViewAdaptor;
 import android.yuchang.weathermvp.widget.sweetdialog.SweetAlertDialog;
 
@@ -36,6 +37,8 @@ public class ManagerCityPresenter extends BasePresenter {
             } else {
                 ChosenCityBean selectedBean = selectedBeanList.get(position);
                 chosenCityHelper.UpdateInfo(selectedBean.getCityName());
+                mIntent = new Intent(activity, MainActivity.class);
+                activity.startActivity(mIntent);
                 activity.finish();
             }
             iv = null;

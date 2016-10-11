@@ -1,5 +1,6 @@
 package android.yuchang.weathermvp.ui.managercity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -14,6 +15,7 @@ import android.yuchang.weathermvp.model.entity.ChosenCityBean;
 import android.yuchang.weathermvp.presenter.impl.ManagerCityPresenter;
 import android.yuchang.weathermvp.ui.base.BaseActivity;
 import android.yuchang.weathermvp.ui.base.BaseView;
+import android.yuchang.weathermvp.ui.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +80,8 @@ public class ManagerCityActivity extends BaseActivity<ManagerCityPresenter> impl
         switch (v.getId()) {
             //返回
             case R.id.iv_back:
+                mIntent = new Intent(this, MainActivity.class);
+                startActivity(mIntent);
                 finish();
                 break;
             case R.id.iv_header_edit:
