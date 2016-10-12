@@ -43,11 +43,16 @@ public class DealHistoryProblemInterceptor implements Interceptor {
             jb = new JSONObject(new String(content));
             weatherBean = GsonHelper.fromJson(jb.optString(Const.JSON_OBJ_FIRST), new TypeToken<List<WeatherBean>>() {
             });
+            if(null != weatherBean) {
+                Gson gson = new Gson();
+                content = gson.toJson(weatherBean).getBytes();
+            }
         } catch (JSONException e) {
+
         }
-        Gson gson = new Gson();
+
         return response.newBuilder()
-                .body(ResponseBody.create(mediaType, gson.toJson(weatherBean).getBytes()))
+                .body(ResponseBody.create(mediaType,content) )
                 .build();
     }
 }

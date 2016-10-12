@@ -13,6 +13,6 @@ public interface WeatherFragmentView extends BaseView {
 
     void FillWeatherInfo(WeatherBean weatherBean);
 
-    void FillWeatherQulity(WeatherQulityBean weatherQulityBean);
+    void FillWeatherQulity( WeatherBean.AqiEntity aqiEntity  );
 
 }

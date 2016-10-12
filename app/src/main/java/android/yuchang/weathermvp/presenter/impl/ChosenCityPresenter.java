@@ -2,11 +2,13 @@ package android.yuchang.weathermvp.presenter.impl;
 
 import android.content.Intent;
 import android.yuchang.weathermvp.R;
+import android.yuchang.weathermvp.model.IChosenCityBean;
 import android.yuchang.weathermvp.model.IHotCityBean;
 import android.yuchang.weathermvp.model.IWeatherBean;
 import android.yuchang.weathermvp.model.db.ChosenCityHelper;
 import android.yuchang.weathermvp.model.entity.ChosenCityBean;
 import android.yuchang.weathermvp.model.entity.WeatherBean;
+import android.yuchang.weathermvp.model.impl.ChosenCityBeanImpl;
 import android.yuchang.weathermvp.model.impl.HotCityBeanImpl;
 import android.yuchang.weathermvp.model.impl.WeatherBeanImpl;
 import android.yuchang.weathermvp.presenter.base.BasePresenter;
@@ -31,7 +33,8 @@ public class ChosenCityPresenter extends BasePresenter {
     private IHotCityBean iHotCityBean;
     private ChosenCityView chosenCityView;
     private SweetAlertDialog sweetAlertDialog;
-    private ChosenCityHelper chosenCityHelper;
+    private IChosenCityBean iChosenCityBean;
+
     private IWeatherBean iWeatherBean;
     private ChosenCityBean chosenCityBean;
 
@@ -40,7 +43,7 @@ public class ChosenCityPresenter extends BasePresenter {
             //退出
             case R.id.iv_back:
                 //判断是否至少存在一个城市，不存在不允许退出
-                if (chosenCityHelper.hasSelectedCity()) {
+                if (iChosenCityBean.hasSelectedCity()) {
                     activity.finish();
                 } else {
                     sweetAlertDialog = new SweetAlertDialog(activity, SweetAlertDialog.WARNING_TYPE)
@@ -82,7 +85,7 @@ public class ChosenCityPresenter extends BasePresenter {
                 chosenCityBean.setTemperatureCode(100);
                 chosenCityBean.setTemperatureStr("获取失败");
                 chosenCityBean.setSelectedFlag(1);
-                chosenCityHelper.storeWeatherInfo(chosenCityBean);
+                iChosenCityBean.storeWeatherInfo(chosenCityBean);
                 mIntent = new Intent(activity, MainActivity.class);
                 activity.startActivity(mIntent);
                 activity.finish();
@@ -98,7 +101,7 @@ public class ChosenCityPresenter extends BasePresenter {
                 chosenCityBean.setTemperatureCode(Integer.parseInt(weatherBean.get(0).getNow().getCond().getCode()));
                 chosenCityBean.setTemperatureStr(weatherBean.get(0).getNow().getCond().getTxt());
                 chosenCityBean.setSelectedFlag(1);
-                chosenCityHelper.storeWeatherInfo(chosenCityBean);
+                iChosenCityBean.storeWeatherInfo(chosenCityBean);
 
                 mIntent = new Intent(activity, MainActivity.class);
                 activity.startActivity(mIntent);
@@ -114,7 +117,7 @@ public class ChosenCityPresenter extends BasePresenter {
         data = iHotCityBean.GetHotCity(activity);
         chosenCityView = (ChosenCityView) mView;
         chosenCityView.FillHotCityRecyclerView(data);
-        chosenCityHelper = new ChosenCityHelper(activity);
+        iChosenCityBean = new ChosenCityBeanImpl(activity);
     }
 
     @Override

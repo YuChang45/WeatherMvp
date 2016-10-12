@@ -10,8 +10,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.yuchang.weathermvp.R;
+import android.yuchang.weathermvp.model.IChosenCityBean;
 import android.yuchang.weathermvp.model.db.ChosenCityHelper;
 import android.yuchang.weathermvp.model.entity.ChosenCityBean;
+import android.yuchang.weathermvp.model.impl.ChosenCityBeanImpl;
 import android.yuchang.weathermvp.presenter.impl.ManagerCityPresenter;
 import android.yuchang.weathermvp.ui.base.BaseActivity;
 import android.yuchang.weathermvp.ui.base.BaseView;
@@ -28,7 +30,7 @@ public class ManagerCityActivity extends BaseActivity<ManagerCityPresenter> impl
     private RecyclerView recyclerView;
     private ManagerCityRecyclerViewAdaptor managerCityRecyclerViewAdaptor;
     private List<ChosenCityBean> selectedBeanList = null;
-    private ChosenCityHelper chosenCityHelper;
+    private IChosenCityBean iChosenCityBean;
 
     @Override
     protected void initContentView(Bundle savedInstanceState) {
@@ -45,22 +47,22 @@ public class ManagerCityActivity extends BaseActivity<ManagerCityPresenter> impl
         tv_title = (TextView) findViewById(R.id.tv_title);
         iv_header_edit = (ImageView) findViewById(R.id.iv_header_edit);
         tv_title.setText(getResources().getString(R.string.city_manager));
-        if (null == chosenCityHelper) {
-            chosenCityHelper = new ChosenCityHelper(this);
+        if (null == iChosenCityBean) {
+            iChosenCityBean = new ChosenCityBeanImpl(this);
         }
         if (null == selectedBeanList) {
             selectedBeanList = new ArrayList<>();
         }
-        selectedBeanList = chosenCityHelper.getSelectorBean();
+        selectedBeanList = iChosenCityBean.getSelectorBean();
         managerCityRecyclerViewAdaptor = new ManagerCityRecyclerViewAdaptor(new ManagerCityRecyclerViewAdaptor.RecyclerViewListenr() {
             @Override
             public void onViewClick(View v, int position) {
-                   mPresenter.IsAddOrChosen(chosenCityHelper,editView,iv_header_edit,v,position);
+                   mPresenter.IsAddOrChosen(iChosenCityBean,editView,iv_header_edit,v,position);
             }
         }, selectedBeanList, this, new ManagerCityRecyclerViewAdaptor.MyCloseInterface() {
             @Override
             public void deleteByCityName(String cityName) {
-                mPresenter.DeletedCity(chosenCityHelper,cityName,managerCityRecyclerViewAdaptor);
+                mPresenter.DeletedCity(iChosenCityBean,cityName,managerCityRecyclerViewAdaptor);
             }
         });
         recyclerView.setAdapter(managerCityRecyclerViewAdaptor);
@@ -101,7 +103,7 @@ public class ManagerCityActivity extends BaseActivity<ManagerCityPresenter> impl
     @Override
     protected void onResume() {
         super.onResume();
-        mPresenter.RefrushData(managerCityRecyclerViewAdaptor, chosenCityHelper);
+        mPresenter.RefrushData(managerCityRecyclerViewAdaptor, iChosenCityBean);
     }
 
     @Override

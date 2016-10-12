@@ -1,6 +1,8 @@
 package android.yuchang.weathermvp.model;
 
-import android.content.Context;
+import android.yuchang.weathermvp.model.entity.ChosenCityBean;
+
+import java.util.List;
 
 /**
  * @author MrChang45
@@ -9,6 +11,24 @@ import android.content.Context;
  */
 public interface IChosenCityBean {
 
-    Boolean IsAllReadyRetainsChosenCity(Context context);
+    Boolean IsAllReadyRetainsChosenCity();
+
+    boolean hasSelectedCity();
+
+    boolean hasOnlyOneSelectedCity();
+
+    boolean hasRemianByCityName(String cityName);
+
+    List<ChosenCityBean> getSelectorBean();
+
+    List<String> getRemainsCityName();
+
+    int storeWeatherInfo(ChosenCityBean bean);
+
+    boolean IsRemainsByCityName(String cityName);
+
+    void UpdateInfo(String selectedCityName);
+
+    int DeletedByCityName(String cityName);
 
 }

@@ -249,7 +249,7 @@ public class WeatherFragment extends BaseFragment<WeatherPresenter> implements W
         tvSports = (TextView) view.findViewById(R.id.tv_55);
 
         mPresenter.FetchWeather(cityName);
-        mPresenter.FetchWeatherQulity(cityName);
+
 
     }
 
@@ -529,10 +529,10 @@ public class WeatherFragment extends BaseFragment<WeatherPresenter> implements W
     }
 
     @Override
-    public void FillWeatherQulity(WeatherQulityBean weatherQulityBean) {
-        if (null != weatherQulityBean) {
+    public void FillWeatherQulity( WeatherBean.AqiEntity aqiEntity ) {
+        if (null != aqiEntity) {
             llAqiBg.setVisibility(View.VISIBLE);
-            int aqi = weatherQulityBean.getRetData().getAqi();
+            int aqi = Integer.parseInt(aqiEntity.getCity().getAqi());
             if (aqi > 0 && aqi <= 50) {
                 //优
                 llAqiBg.setBackgroundResource(R.drawable.aqi_grren_bg);
@@ -563,8 +563,8 @@ public class WeatherFragment extends BaseFragment<WeatherPresenter> implements W
                 llAqiBg.setBackgroundResource(R.drawable.aqi_maroon_bg);
                 ivAqiIco.setBackgroundResource(R.mipmap.aqi_icon_bader);
             }
-            tvAqiNum.setText(weatherQulityBean.getRetData().getAqi() + "");
-            tvAqiTxt.setText(weatherQulityBean.getRetData().getLevel());
+            tvAqiNum.setText(aqiEntity.getCity().getAqi() + "");
+            tvAqiTxt.setText(aqiEntity.getCity().getQlty());
         }
     }
 }

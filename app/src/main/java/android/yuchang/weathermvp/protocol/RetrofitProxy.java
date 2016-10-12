@@ -22,7 +22,6 @@ import retrofit.RxJavaCallAdapterFactory;
 public class RetrofitProxy {
 
     private static WeatherApi weatherApi = null;
-    public static WeatherQulityApi weatherQulityApi = null;
     private static Retrofit retrofit = null;
     private static OkHttpClient mOkHttpClient = null;
 
@@ -57,37 +56,5 @@ public class RetrofitProxy {
         if (weatherApi != null) return weatherApi;
         initWeather();
         return getWeatherApi();
-    }
-
-    public static void initWeatherQulityApi() {
-
-        Executor executor = Executors.newCachedThreadPool();
-        Gson gson = new GsonBuilder().create();
-
-        mOkHttpClient = new OkHttpClient();
-        mOkHttpClient.setConnectTimeout(5, TimeUnit.MINUTES);
-        mOkHttpClient.setWriteTimeout(1, TimeUnit.MINUTES);
-        mOkHttpClient.setReadTimeout(1, TimeUnit.MINUTES);
-
-        //cookie enabled
-        mOkHttpClient.setCookieHandler(new CookieManager(null, CookiePolicy.ACCEPT_ORIGINAL_SERVER));
-        mOkHttpClient.networkInterceptors().add(new LogInterceptor());
-        mOkHttpClient.networkInterceptors().add(new CommomHeaderInterceptor());
-        retrofit = new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create(gson))// 使用Gson作为数据转换器
-                .baseUrl(WeatherQulityApi.HOST)
-                .callbackExecutor(executor)
-                .client(mOkHttpClient)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())// 使用RxJava作为回调适配器
-                .build();
-
-        //connect with requestApi
-        weatherQulityApi = retrofit.create(WeatherQulityApi.class);
-    }
-
-    public static WeatherQulityApi getWeatherQulityApi() {
-        if (weatherQulityApi != null) return weatherQulityApi;
-        initWeatherQulityApi();
-        return getWeatherQulityApi();
     }
 }

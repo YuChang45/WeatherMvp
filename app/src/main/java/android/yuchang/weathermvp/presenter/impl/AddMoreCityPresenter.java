@@ -6,12 +6,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.yuchang.weathermvp.R;
+import android.yuchang.weathermvp.model.IAddMoreCityBean;
+import android.yuchang.weathermvp.model.IChosenCityBean;
 import android.yuchang.weathermvp.model.IWeatherBean;
 import android.yuchang.weathermvp.model.db.ChosenCityHelper;
 import android.yuchang.weathermvp.model.db.CityHelper;
 import android.yuchang.weathermvp.model.entity.AddMoreCityBean;
 import android.yuchang.weathermvp.model.entity.ChosenCityBean;
 import android.yuchang.weathermvp.model.entity.WeatherBean;
+import android.yuchang.weathermvp.model.impl.AddMoreCityBeanImpl;
+import android.yuchang.weathermvp.model.impl.ChosenCityBeanImpl;
 import android.yuchang.weathermvp.model.impl.WeatherBeanImpl;
 import android.yuchang.weathermvp.presenter.base.BasePresenter;
 import android.yuchang.weathermvp.ui.addmorecity.AddMoreCityListRecyclerViewAdapotr;
@@ -33,17 +37,17 @@ public class AddMoreCityPresenter extends BasePresenter {
 
 
     private IWeatherBean iWeatherBean;
-    private CityHelper cityHelper;
+    private IChosenCityBean iChosenCityBean;
+    private IAddMoreCityBean iAddMoreCityBean;
     private List<AddMoreCityBean> addMoreCityBeanListProvince = new ArrayList<>();
     private List<AddMoreCityBean> addMoreCityBeanListCity = new ArrayList<>();
     private AddMoreCityListRecyclerViewAdapotr addMoreCityListRecyclerViewAdapotrProvince;
     private AddMoreCityListRecyclerViewAdapotr addMoreCityListRecyclerViewAdapotrCity;
 
-    private ChosenCityHelper chosenCityHelper;
     private ChosenCityBean chosenCityBean;
 
     public void buildProvinceRecyclerView(RecyclerView recyclerViewProvince) {
-        cityHelper = new CityHelper(activity);
+        iAddMoreCityBean = new AddMoreCityBeanImpl(activity);
         addMoreCityListRecyclerViewAdapotrProvince = new AddMoreCityListRecyclerViewAdapotr(activity, new HotCityRecyclerViewAdaptor.RecyclerViewListenr() {
             @Override
             public void onViewClick(View v, int position) {
@@ -52,7 +56,7 @@ public class AddMoreCityPresenter extends BasePresenter {
                 RefreshCity(position);
             }
         }, R.layout.item_list_view_province);
-        addMoreCityBeanListProvince = cityHelper.getProvinces();
+        addMoreCityBeanListProvince = iAddMoreCityBean.getProvinces();
         //默认选中第一个
         addMoreCityBeanListProvince.get(0).enable = false;
         addMoreCityListRecyclerViewAdapotrProvince.setData(addMoreCityBeanListProvince);
@@ -79,7 +83,7 @@ public class AddMoreCityPresenter extends BasePresenter {
     }
 
     private void RefreshProvince(int position) {
-        addMoreCityBeanListCity = cityHelper.getData(addMoreCityBeanListProvince.get(position).name);
+        addMoreCityBeanListCity = iAddMoreCityBean.getData(addMoreCityBeanListProvince.get(position).name);
         addMoreCityListRecyclerViewAdapotrCity.setData(addMoreCityBeanListCity);
         addMoreCityListRecyclerViewAdapotrCity.notifyDataSetChanged();
     }
@@ -87,7 +91,7 @@ public class AddMoreCityPresenter extends BasePresenter {
     public void buildCityRecyclerView(RecyclerView recyclerViewCity) {
 
         iWeatherBean = new WeatherBeanImpl();
-        chosenCityHelper = new ChosenCityHelper(activity);
+        iChosenCityBean = new ChosenCityBeanImpl(activity);
 
         addMoreCityListRecyclerViewAdapotrCity = new AddMoreCityListRecyclerViewAdapotr(activity, new HotCityRecyclerViewAdaptor.RecyclerViewListenr() {
             @Override
@@ -109,7 +113,7 @@ public class AddMoreCityPresenter extends BasePresenter {
                         chosenCityBean.setTemperatureCode(100);
                         chosenCityBean.setTemperatureStr("获取失败");
                         chosenCityBean.setSelectedFlag(1);
-                        chosenCityHelper.storeWeatherInfo(chosenCityBean);
+                        iChosenCityBean.storeWeatherInfo(chosenCityBean);
 
                         mIntent = new Intent(activity, ManagerCityActivity.class);
                         activity.startActivity(mIntent);
@@ -125,7 +129,7 @@ public class AddMoreCityPresenter extends BasePresenter {
                         chosenCityBean.setTemperatureCode(Integer.parseInt(weatherBean.get(0).getNow().getCond().getCode()));
                         chosenCityBean.setTemperatureStr(weatherBean.get(0).getNow().getCond().getTxt());
                         chosenCityBean.setSelectedFlag(1);
-                        chosenCityHelper.storeWeatherInfo(chosenCityBean);
+                        iChosenCityBean.storeWeatherInfo(chosenCityBean);
 
                         mIntent = new Intent(activity, ManagerCityActivity.class);
                         activity.startActivity(mIntent);
@@ -135,7 +139,7 @@ public class AddMoreCityPresenter extends BasePresenter {
 
             }
         }, R.layout.item_list_view_city);
-        addMoreCityBeanListCity = cityHelper.getData(addMoreCityBeanListProvince.get(0).name);
+        addMoreCityBeanListCity = iAddMoreCityBean.getData(addMoreCityBeanListProvince.get(0).name);
         addMoreCityListRecyclerViewAdapotrCity.setData(addMoreCityBeanListCity);
         //设置布局管理器
         recyclerViewCity.setLayoutManager(new LinearLayoutManager(activity));

@@ -6,10 +6,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.yuchang.weathermvp.R;
 import android.yuchang.weathermvp.commom.Const;
+import android.yuchang.weathermvp.model.IChosenCityBean;
 import android.yuchang.weathermvp.model.db.ChosenCityHelper;
 import android.yuchang.weathermvp.model.entity.ChosenCityBean;
 import android.yuchang.weathermvp.presenter.base.BasePresenter;
 import android.yuchang.weathermvp.ui.addmorecity.AddMoreCityActivity;
+import android.yuchang.weathermvp.ui.chosencity.ChosenCityActivity;
 import android.yuchang.weathermvp.ui.main.MainActivity;
 import android.yuchang.weathermvp.ui.managercity.ManagerCityRecyclerViewAdaptor;
 import android.yuchang.weathermvp.widget.sweetdialog.SweetAlertDialog;
@@ -27,12 +29,12 @@ public class ManagerCityPresenter extends BasePresenter {
     private List<ChosenCityBean> selectedBeanList = null;
 
 
-    public void IsAddOrChosen(ChosenCityHelper chosenCityHelper, Boolean editView, ImageView iv_header_edit, View view, int position) {
+    public void IsAddOrChosen(IChosenCityBean chosenCityHelper, Boolean editView, ImageView iv_header_edit, View view, int position) {
         if (!editView) {
             iv_header_edit.setBackgroundResource(R.drawable.edit_selector);
             ImageView iv = (ImageView) view.findViewById(R.id.iv_add);
             if (iv.getVisibility() == View.VISIBLE) {
-                mIntent = new Intent(activity, AddMoreCityActivity.class);
+                mIntent = new Intent(activity, ChosenCityActivity.class);
                 activity.startActivity(mIntent);
             } else {
                 ChosenCityBean selectedBean = selectedBeanList.get(position);
@@ -45,7 +47,7 @@ public class ManagerCityPresenter extends BasePresenter {
         }
     }
 
-    public void DeletedCity(ChosenCityHelper chosenCityHelper, String cityName, ManagerCityRecyclerViewAdaptor managerCityRecyclerViewAdaptor) {
+    public void DeletedCity(IChosenCityBean chosenCityHelper, String cityName, ManagerCityRecyclerViewAdaptor managerCityRecyclerViewAdaptor) {
 
         if (!chosenCityHelper.hasOnlyOneSelectedCity()) {
 
@@ -84,7 +86,7 @@ public class ManagerCityPresenter extends BasePresenter {
     /***
      * 刷新数据
      */
-    public void RefrushData(ManagerCityRecyclerViewAdaptor managerCityRecyclerViewAdaptor, ChosenCityHelper chosenCityHelper) {
+    public void RefrushData(ManagerCityRecyclerViewAdaptor managerCityRecyclerViewAdaptor, IChosenCityBean chosenCityHelper) {
 
         if (null == selectedBeanList) {
             selectedBeanList = new ArrayList<>();

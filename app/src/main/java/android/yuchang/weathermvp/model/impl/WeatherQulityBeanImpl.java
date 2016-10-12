@@ -18,7 +18,7 @@ public class WeatherQulityBeanImpl implements IWeatherQulityBean {
 
     @Override
     public Subscription GetWeatherQulityInfo(String cityName, Observer<WeatherQulityBean> observable) {
-        return RetrofitProxy.getWeatherQulityApi()
+        return RetrofitProxy.getWeatherApi()
                 .GetWeatherQulityInfo(cityName)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -2,6 +2,7 @@ package android.yuchang.weathermvp.protocol;
 
 import android.yuchang.weathermvp.commom.url.ApiUrl;
 import android.yuchang.weathermvp.model.entity.WeatherBean;
+import android.yuchang.weathermvp.model.entity.WeatherQulityBean;
 
 import java.util.List;
 
@@ -27,4 +28,13 @@ public interface WeatherApi {
     @GET("heweather/weather/free")
     Observable<List<WeatherBean>> GetWeatherInfo(@Query("city") String cityName);
 
+
+    /***
+     * 获取天气质量
+     *
+     * @param cityName
+     * @return
+     */
+    @GET("/apistore/aqiservice/aqi")
+    Observable<WeatherQulityBean> GetWeatherQulityInfo(@Query("city") String cityName);
 }

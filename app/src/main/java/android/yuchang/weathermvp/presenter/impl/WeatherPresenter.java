@@ -20,13 +20,9 @@ import rx.Observer;
  */
 public class WeatherPresenter extends BasePresenter {
 
-
-    private WeatherBean weatherBean;
-    private WeatherQulityBean weatherQulityBean;
     private IWeatherQulityBean iWeatherQulityBean;
     private IWeatherBean iWeatherBean;
     private WeatherFragmentView weatherFragmentView;
-
 
     public void FetchWeatherQulity(String cityName) {
 
@@ -47,13 +43,21 @@ public class WeatherPresenter extends BasePresenter {
 
             @Override
             public void onNext(WeatherQulityBean weatherQulityBean) {
-                weatherFragmentView.FillWeatherQulity(weatherQulityBean);
+
+                WeatherBean.AqiEntity aqiEntity = new WeatherBean.AqiEntity();
+                WeatherBean.AqiEntity.CityEntity cityEntity = new WeatherBean.AqiEntity.CityEntity();
+                cityEntity.setAqi(weatherQulityBean.getRetData().getAqi() + "");
+                cityEntity.setQlty(weatherQulityBean.getRetData().getLevel());
+
+                aqiEntity.setCity(cityEntity);
+                weatherFragmentView.FillWeatherQulity(aqiEntity);
+
             }
         });
 
     }
 
-    public void FetchWeather(String cityName) {
+    public void FetchWeather(final String cityName) {
 
         if (iWeatherBean == null) {
             iWeatherBean = new WeatherBeanImpl();
@@ -73,6 +77,12 @@ public class WeatherPresenter extends BasePresenter {
             @Override
             public void onNext(List<WeatherBean> weatherBeen) {
                 weatherFragmentView.FillWeatherInfo(weatherBeen.get(0));
+                if (null != weatherBeen.get(0).getAqi()) {
+                    weatherFragmentView.FillWeatherQulity(weatherBeen.get(0).getAqi());
+                } else {
+                    FetchWeatherQulity(cityName);
+                }
+
             }
         });
     }

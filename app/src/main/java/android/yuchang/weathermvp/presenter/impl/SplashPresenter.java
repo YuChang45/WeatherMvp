@@ -23,31 +23,22 @@ public class SplashPresenter extends BasePresenter {
 
     private IChosenCityBean iChosenCityBean;
     private SplashView splashView;
-    private List<String> chosenCityNamesList;
-    private ChosenCityHelper chosenCityHelper;
+  //  private List<String> chosenCityNamesList;
+  //  private ChosenCityHelper chosenCityHelper;
 
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             splashView.TurnToOtherActivityByIntent(mIntent);
-
-//            chosenCityHelper = new ChosenCityHelper(activity);
-//            chosenCityNamesList = chosenCityHelper.getRemainsCityName();
-//            if (chosenCityNamesList != null && chosenCityNamesList.size() > 0) {
-//                //跳转主界面
-//
-//            } else {
-//                splashView.TurnToOtherActivityByIntent(mIntent);
-//            }
         }
     };
 
     @Override
     public void onStart() {
         splashView = (SplashView) mView;
-        iChosenCityBean = new ChosenCityBeanImpl();
-        if (iChosenCityBean.IsAllReadyRetainsChosenCity(activity)) {
+        iChosenCityBean = new ChosenCityBeanImpl(activity);
+        if (iChosenCityBean.IsAllReadyRetainsChosenCity()) {
             mIntent = new Intent(activity, MainActivity.class);
         } else {
             mIntent = new Intent(activity, ChosenCityActivity.class);
