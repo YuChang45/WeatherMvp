@@ -8,12 +8,8 @@
 
       ![image](https://github.com/YuChang45/WeatherMvp/blob/master/app/src/main/res/raw/gc01.png?raw=true)
 
-      ![image](https://github.com/YuChang45/WeatherMvp/blob/master/app/src/main/res/raw/gc02.png?raw=true)
+      (https://github.com/YuChang45/WeatherMvp/blob/master/app/src/main/res/raw/gc02.png?raw=true)
 
-
-
-        ![image](https://github.com/YuChang45/WeatherMvp/blob/master/app/src/main/res/raw/gc02.png?raw=true)
-            ![image](https://github.com/YuChang45/WeatherMvp/blob/master/app/src/main/res/raw/mvp.png?raw=true)
       上图是我对工程结构的简图描述，View层和Presenter层互相持有引用，他们之间配合完成整个逻辑，Presenter层通过接口持有model层的引用，
       这样Presenter层并不需要知道数据是从哪里来的，可以起到一个解耦的作用。
 
