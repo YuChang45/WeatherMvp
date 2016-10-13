@@ -14,7 +14,7 @@ import java.util.Iterator;
 /***
  * Gson帮助类
  *
- * @author 喻畅 2015-01-20
+ * @author 畅 2015-01-20
  */
 public class GsonHelper {
     public static final String EMPTY = "";

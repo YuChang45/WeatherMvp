@@ -11,18 +11,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/***
- * 操作 省市数据库
+/**
+ * @author MrChang45
+ * @time 2016/9/19
+ * @desc 省市区三级 操作帮助类
  */
 public class CityHelper {
 
     private SQLiteDatabase db;
-    private Context context;
     private CityDataBase dbm;
 
     public CityHelper(Context context) {
         super();
-        this.context = context;
         dbm = new CityDataBase(context);
         zxs = Arrays.asList(context.getResources().getStringArray(R.array.province_level_city_names));
     }
@@ -33,10 +33,10 @@ public class CityHelper {
         } else {
             //判断是否是直辖市
             if (zxs.contains(inParam)) {
-               return getCountryNames(inParam);
+                return getCountryNames(inParam);
             } else {
                 //判断是否是省份
-                if (getProvinces().contains(new AddMoreCityBean(inParam,false))) {
+                if (getProvinces().contains(new AddMoreCityBean(inParam, false))) {
                     return getCityNames(inParam);
                 } else {
                     return getCountryNames(inParam);
@@ -55,7 +55,7 @@ public class CityHelper {
             Cursor cursor = db.rawQuery(sql, null);
             while (cursor.moveToNext()) {
                 data.add(new AddMoreCityBean(cursor.getString(cursor
-                        .getColumnIndex("province_name")),true));
+                        .getColumnIndex("province_name")), true));
             }
 
         } catch (Exception e) {
@@ -77,7 +77,7 @@ public class CityHelper {
      */
     public List<AddMoreCityBean> getCityNames(String code) {
         db = dbm.getDatabase();
-               List<AddMoreCityBean> data = new ArrayList<>();
+        List<AddMoreCityBean> data = new ArrayList<>();
         try {
             if (zxs.contains(code)) {
                 data = getCountryNames(code);
@@ -88,7 +88,7 @@ public class CityHelper {
 
                 while (cursor.moveToNext()) {
                     data.add(new AddMoreCityBean(cursor.getString(cursor
-                            .getColumnIndex("city_name")),true));
+                            .getColumnIndex("city_name")), true));
                 }
             }
 
@@ -118,7 +118,7 @@ public class CityHelper {
 
             while (cursor.moveToNext()) {
                 data.add(new AddMoreCityBean(cursor.getString(cursor
-                        .getColumnIndex("country_name")),true));
+                        .getColumnIndex("country_name")), true));
             }
 
         } catch (Exception e) {

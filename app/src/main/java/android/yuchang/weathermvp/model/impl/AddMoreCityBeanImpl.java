@@ -14,13 +14,10 @@ import java.util.List;
  */
 public class AddMoreCityBeanImpl implements IAddMoreCityBean {
 
-    private Context context;
     private CityHelper cityHelper;
 
     public AddMoreCityBeanImpl(Context context) {
-        this.context = context;
         cityHelper = new CityHelper(context);
-
     }
 
     @Override

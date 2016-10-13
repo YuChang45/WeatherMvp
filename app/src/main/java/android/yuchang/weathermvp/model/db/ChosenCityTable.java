@@ -3,7 +3,7 @@ package android.yuchang.weathermvp.model.db;
 /**
  * @author MrChang45
  * @time 2016/9/19
- * @desc
+ * @desc 已选择城市model
  */
 public class ChosenCityTable {
 

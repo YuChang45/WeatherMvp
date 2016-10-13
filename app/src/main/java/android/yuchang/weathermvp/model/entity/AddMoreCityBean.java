@@ -11,7 +11,13 @@ public class AddMoreCityBean {
         this.enable = selected;
     }
 
+    /***
+     * 城市名称
+     */
     public String name;
+    /**
+     * 是否可点击
+     */
     public Boolean enable;
 
 

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @author MrChang
  *         created  at  2016/1/12.
- * @description
+ * @description 已选择城市 数据库帮助类
  */
 public class ChosenCityHelper {
 
@@ -189,7 +189,7 @@ public class ChosenCityHelper {
         int result = Const.DELETE_ERRO;
         if (db != null) {
 
-            result = db.delete(ChosenCityTable.TABLE_NAME, ChosenCityTable.cityName +  "  =?", new String[]{cityName
+            result = db.delete(ChosenCityTable.TABLE_NAME, ChosenCityTable.cityName + "  =?", new String[]{cityName
                     + ""});
         }
         return result;

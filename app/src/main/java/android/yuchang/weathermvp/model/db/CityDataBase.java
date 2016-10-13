@@ -10,6 +10,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * @author MrChang45
+ * @time 2016/9/19
+ * @desc 省市区三级数据库
+ */
 public class CityDataBase {
 
     private final int BUFFER_SIZE = 1024;

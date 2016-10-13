@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="province_level_city_names">
         <item>北京</item>
         <item>上海</item>
@@ -30,7 +31,6 @@
         <item>香港</item>
         <item>澳门</item>
         <item>台北</item>
-        <item>岳阳</item>
     </string-array>
 
 </resources>

@@ -9,9 +9,6 @@ import android.yuchang.weathermvp.model.base.BaseModel;
  */
 public class ChosenCityBean implements BaseModel {
 
-    /***
-     * 城市名称
-     */
     private String cityName;
 
     public String getCityName() {

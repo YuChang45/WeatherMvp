@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">畅天气</string>
     <string name="more_city">更多城市</string>
     <string name="choose_city">选择城市</string>
@@ -7,11 +8,10 @@
     <string name="dialog_default_title">Here\'s a message!</string>
     <string name="notice_str">提示信息</string>
     <string name="i_know_str">我明白了</string>
-    <string name="at_leaste_svae_one_city">至少保留一个城市!</string>
+    <string name="at_leaste_save_one_city">至少保留一个城市!</string>
     <string name="at_leaste_select_one_city">至少选择一个城市!</string>
     <string name="get_erro">获取失败</string>
     <string name="exit_again">再按一次退出畅天气</string>
     <string name="city_manager">城市管理</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

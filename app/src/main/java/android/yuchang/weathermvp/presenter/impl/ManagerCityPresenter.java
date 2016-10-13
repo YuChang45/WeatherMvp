@@ -7,10 +7,8 @@ import android.widget.Toast;
 import android.yuchang.weathermvp.R;
 import android.yuchang.weathermvp.commom.Const;
 import android.yuchang.weathermvp.model.IChosenCityBean;
-import android.yuchang.weathermvp.model.db.ChosenCityHelper;
 import android.yuchang.weathermvp.model.entity.ChosenCityBean;
 import android.yuchang.weathermvp.presenter.base.BasePresenter;
-import android.yuchang.weathermvp.ui.addmorecity.AddMoreCityActivity;
 import android.yuchang.weathermvp.ui.chosencity.ChosenCityActivity;
 import android.yuchang.weathermvp.ui.main.MainActivity;
 import android.yuchang.weathermvp.ui.managercity.ManagerCityRecyclerViewAdaptor;
@@ -69,7 +67,7 @@ public class ManagerCityPresenter extends BasePresenter {
             //只剩最后一个城市，不得删除，业务逻辑为 至少保留一个城市
             new SweetAlertDialog(activity, SweetAlertDialog.WARNING_TYPE)
                     .setTitleText(activity.getResources().getString(R.string.notice_str))
-                    .setContentText(activity.getResources().getString(R.string.at_leaste_svae_one_city))
+                    .setContentText(activity.getResources().getString(R.string.at_leaste_save_one_city))
                     .setConfirmText(activity.getResources().getString(R.string.i_know_str))
                     .showCancelButton(true)
                     .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {

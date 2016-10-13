@@ -10,6 +10,7 @@ import java.util.List;
  * @desc
  */
 public interface IAddMoreCityBean {
+
     List<AddMoreCityBean> getData(String inParam);
 
     List<AddMoreCityBean> getProvinces();

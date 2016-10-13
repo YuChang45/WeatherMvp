@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * @author MrChang
  *         created  at  2016/1/12.
- * @description
+ * @description 已选择城市 数据库
  */
 public class ChosenCityDataBase extends SQLiteOpenHelper {
 

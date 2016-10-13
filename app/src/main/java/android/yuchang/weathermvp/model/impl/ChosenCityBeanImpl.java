@@ -14,17 +14,14 @@ import java.util.List;
  */
 public class ChosenCityBeanImpl implements IChosenCityBean {
 
-    private Context context;
     private ChosenCityHelper chosenCityHelper;
 
     public ChosenCityBeanImpl(Context context) {
-        this.context = context;
         chosenCityHelper = new ChosenCityHelper(context);
     }
 
     @Override
     public Boolean IsAllReadyRetainsChosenCity() {
-        ChosenCityHelper chosenCityHelper = new ChosenCityHelper(context);
         return chosenCityHelper.hasSelectedCity();
     }
 

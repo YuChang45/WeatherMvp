@@ -1,12 +1,10 @@
 package android.yuchang.weathermvp.protocol;
 
-import android.yuchang.weathermvp.commom.url.ApiUrl;
 import android.yuchang.weathermvp.model.entity.WeatherBean;
 import android.yuchang.weathermvp.model.entity.WeatherQulityBean;
 
 import java.util.List;
 
-import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.Query;
 import rx.Observable;

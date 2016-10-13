@@ -1,7 +1,6 @@
 package android.yuchang.weathermvp.ui.main;
 
 import android.os.Bundle;
-import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -9,23 +8,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.yuchang.weathermvp.R;
 import android.yuchang.weathermvp.commom.Const;
-import android.yuchang.weathermvp.commom.url.ApiUrl;
-import android.yuchang.weathermvp.commom.utils.GsonHelper;
+import android.yuchang.weathermvp.protocol.ApiUrl;
 import android.yuchang.weathermvp.commom.utils.StrUtil;
 import android.yuchang.weathermvp.commom.utils.WeatherIcoHelper;
 import android.yuchang.weathermvp.model.entity.WeatherBean;
-import android.yuchang.weathermvp.model.entity.WeatherQulityBean;
 import android.yuchang.weathermvp.presenter.impl.WeatherPresenter;
 import android.yuchang.weathermvp.ui.base.BaseFragment;
 
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

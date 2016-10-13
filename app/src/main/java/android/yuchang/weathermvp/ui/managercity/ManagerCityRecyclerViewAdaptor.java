@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.yuchang.weathermvp.R;
 import android.yuchang.weathermvp.commom.Const;
-import android.yuchang.weathermvp.commom.url.ApiUrl;
+import android.yuchang.weathermvp.protocol.ApiUrl;
 import android.yuchang.weathermvp.commom.utils.WeatherIcoHelper;
 import android.yuchang.weathermvp.model.entity.ChosenCityBean;
 

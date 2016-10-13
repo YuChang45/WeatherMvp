@@ -1,7 +1,6 @@
 package android.yuchang.weathermvp.protocol;
 
 import android.yuchang.weathermvp.commom.Const;
-import android.yuchang.weathermvp.commom.url.ApiUrl;
 import android.yuchang.weathermvp.commom.utils.GsonHelper;
 import android.yuchang.weathermvp.model.entity.WeatherBean;
 

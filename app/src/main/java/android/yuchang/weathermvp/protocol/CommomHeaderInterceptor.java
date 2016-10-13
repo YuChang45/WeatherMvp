@@ -1,7 +1,5 @@
 package android.yuchang.weathermvp.protocol;
 
-import android.yuchang.weathermvp.commom.url.ApiUrl;
-
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.Request;

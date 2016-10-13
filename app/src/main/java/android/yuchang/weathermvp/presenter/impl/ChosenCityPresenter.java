@@ -80,10 +80,10 @@ public class ChosenCityPresenter extends BasePresenter {
 
                 chosenCityBean = new ChosenCityBean();
                 chosenCityBean.setCityName(cityName);
-                chosenCityBean.setMaxTemperature("获取失败");
-                chosenCityBean.setMinTemperature("获取失败");
+                chosenCityBean.setMaxTemperature(activity.getString(R.string.get_erro));
+                chosenCityBean.setMinTemperature(activity.getString(R.string.get_erro));
                 chosenCityBean.setTemperatureCode(100);
-                chosenCityBean.setTemperatureStr("获取失败");
+                chosenCityBean.setTemperatureStr(activity.getString(R.string.get_erro));
                 chosenCityBean.setSelectedFlag(1);
                 iChosenCityBean.storeWeatherInfo(chosenCityBean);
                 mIntent = new Intent(activity, MainActivity.class);
